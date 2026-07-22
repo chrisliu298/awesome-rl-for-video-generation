@@ -356,7 +356,7 @@ Inclusion criterion: the work must define, train, apply, or directly enable a re
   author = {Liu, Chris Yuhao and others},
   year = {2026},
   url = {https://github.com/chrisliu298/awesome-rl-for-video-generation},
-  version = {v0.1.0}
+  version = {v1.0.0}
 }
 ```
 
