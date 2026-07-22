@@ -9,6 +9,6 @@ repository-code: "https://github.com/chrisliu298/awesome-rl-for-video-generation
 url: "https://github.com/chrisliu298/awesome-rl-for-video-generation"
 abstract: "A curated collection of papers, datasets, benchmarks, and code for reinforcement learning, preference optimization, and reward-driven post-training and alignment methods for video generation models."
 license: "CC0-1.0"
-# doi: minted via Zenodo post-review — do not reuse the RM list's DOI
+doi: "10.5281/zenodo.21483924"
 version: "v1.0.0"
 date-released: "2026-07-22"

@@ -355,6 +355,7 @@ Inclusion criterion: the work must define, train, apply, or directly enable a re
   title = {{Awesome RL for Video Generation}},
   author = {Liu, Chris Yuhao and others},
   year = {2026},
+  doi = {10.5281/zenodo.21483924},
   url = {https://github.com/chrisliu298/awesome-rl-for-video-generation},
   version = {v1.0.0}
 }
