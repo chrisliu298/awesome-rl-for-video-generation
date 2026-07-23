@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-204-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-207-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="GitHub Last Commit"></a>
@@ -119,6 +119,7 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [Rethinking Reward Signals in Video GRPO: When Scores Become Targets](https://arxiv.org/abs/2511.19356) *(2025)* — TaRoS converts scalar scores into self-paced target-reaching rewards to preserve useful group variance.
 - [BranchGRPO: Stable and Efficient GRPO with Structured Branching in Diffusion Models](https://arxiv.org/abs/2509.06040) *(2025)* — Shares early denoising prefixes and branches later rollouts to reduce cost while retaining relative comparisons.
 - [Diverse Video Generation with Determinantal Point Process-Guided Policy Optimization](https://arxiv.org/abs/2511.20647) *(2025)* — DPP-GRPO rewards set-level diversity rather than optimizing independent samples toward one high-score mode.
+- [Data-regularized Reinforcement Learning for Diffusion Models at Scale](https://arxiv.org/abs/2512.04332) *(2025)* — DDRL adds a data-regularization term that anchors updates to the pretraining distribution, curbing reward hacking during large-scale RL post-training of high-resolution video diffusion.
 - [TAGRPO: Boosting GRPO on Image-to-Video Generation with Direct Trajectory Alignment](https://arxiv.org/abs/2601.05729) *(2026)* — Adds direct trajectory alignment so group-relative updates respect the image-to-video denoising path.
 - [OP-GRPO: Efficient Off-Policy GRPO for Flow-Matching Models](https://arxiv.org/abs/2604.04142) *(2026)* — Reuses stale flow trajectories with off-policy correction to improve rollout efficiency.
 - [Flash-GRPO: Efficient Alignment for Video Diffusion via One-Step Policy Optimization](https://arxiv.org/abs/2605.15980) *(2026)* — Compresses policy optimization to one-step video rollouts for substantially cheaper alignment.
@@ -220,6 +221,7 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [T2V-Turbo: Breaking the Quality Bottleneck of Video Consistency Model with Mixed Reward Feedback](https://arxiv.org/abs/2405.18750) *(2024)* — Adds differentiable image and video rewards directly to consistency distillation for fast high-quality sampling.
 - [T2V-Turbo-v2: Enhancing Video Generation Model Post-Training through Data, Reward, and Conditional Guidance Design](https://arxiv.org/abs/2410.05677) *(2024)* — Extends mixed-reward consistency training with improved data and conditioning design.
 - [Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](https://arxiv.org/abs/2510.14255) *(2025)* — IPRO differentiates identity and video-quality rewards to preserve a reference subject during animation.
+- [ROCM: RLHF on Consistency Models](https://arxiv.org/abs/2503.06171) *(2025)* — Aligns few-step consistency models across image, audio, and video by backpropagating first-order reward gradients under f-divergence regularization to curb reward over-optimization.
 - [CamPilot: Improving Camera Control in Video Diffusion Model with Efficient Camera Reward Feedback](https://arxiv.org/abs/2601.16214) *(2026)* — Decodes latents into 3D Gaussians and differentiates a view-consistency reward for camera alignment.
 - [DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning](https://arxiv.org/abs/2603.12257) *(2026)* — Learns a motion-aware latent identity reward that preserves multiple subjects without VAE decoding.
 - [Your Data Manifold is Secretly a Reward Model: Shell-LCC for Text-to-Video Generation](https://arxiv.org/abs/2606.30248) *(2026)* — Turns the high-quality training-data manifold into a dense differentiable latent reward that preserves local detail.
@@ -241,6 +243,7 @@ Start from the failure you need to fix. Training-time methods change the generat
 Only rewards explicitly designed or demonstrated to train, steer, or verify a video generator are listed here. For the full reward-model taxonomy, datasets, judges, and evaluator literature, use [Awesome Reward Models for Video Generation](https://github.com/chrisliu298/awesome-rm-for-video-generation).
 
 - [Improving Video Generation with Human Feedback](https://arxiv.org/abs/2501.13918) *(2025)* — Introduces VideoReward, VideoGen-RewardBench, Flow-DPO, Flow-RWR, and inference-time Flow-NRG.
+- [MJ-VIDEO: Fine-Grained Benchmarking and Rewarding Video Preferences in Video Generation](https://arxiv.org/abs/2502.01719) *(2025)* — Mixture-of-Experts video reward model that routes to fine-grained preference experts across alignment, safety, coherence, and fairness to drive preference tuning of video generators.
 - [VideoScore: Building Automatic Metrics to Simulate Fine-grained Human Feedback for Video Generation](https://arxiv.org/abs/2406.15252) *(2024)* — Learns multidimensional human video scores intended as an RLHF proxy reward.
 - [VisionReward: Fine-Grained Multi-Dimensional Human Preference Learning for Image and Video Generation](https://arxiv.org/abs/2412.21059) *(2024)* — Produces interpretable dimension-level rewards for consistent multi-objective preference optimization.
 - [VideoScore2: Think before You Score in Generative Video Evaluation](https://arxiv.org/abs/2509.22799) *(2025)* — Adds reasoned, GRPO-trained multidimensional judgments and supports reward-based best-of-N sampling.
@@ -363,4 +366,4 @@ Inclusion criterion: the work must define, train, apply, or directly enable a re
 
 ---
 
-*Repository last updated: 2026-07-22. Coverage: reinforcement learning, preference optimization, GRPO / flow-GRPO, differentiable-reward post-training, reward-guided inference, reward models and verifiers that drive RL, and enabling datasets and benchmarks for video generation. Years denote first public preprint release.*
+*Repository last updated: 2026-07-23. Coverage: reinforcement learning, preference optimization, GRPO / flow-GRPO, differentiable-reward post-training, reward-guided inference, reward models and verifiers that drive RL, and enabling datasets and benchmarks for video generation. Years denote first public preprint release.*
