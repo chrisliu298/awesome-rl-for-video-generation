@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-207-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-209-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="GitHub Last Commit"></a>
@@ -259,6 +259,8 @@ Only rewards explicitly designed or demonstrated to train, steer, or verify a vi
 - [Through the PRISM: Preference Representation in Intermediate States of Video Diffusion Models](https://arxiv.org/abs/2606.20310) *(2026)* — Trains a latent video reward model — a query head over a frozen diffusion backbone's noisy intermediate states — for noise-robust pre-decode Best-of-N selection.
 - [Think, then Score: Decoupled Reasoning and Scoring for Video Reward Modeling](https://arxiv.org/abs/2605.05922) *(2026)* — DeScore separates chain-of-thought video assessment from scalar reward prediction and uses dual-objective RL to improve reasoning and reward calibration.
 - [GT-SVJ: Generative-Transformer-Based Self-Supervised Video Judge for Efficient Video Reward Modeling](https://arxiv.org/abs/2602.05202) *(2026)* — Reformulates a video generative transformer as an energy-based reward model trained with contrastive latent perturbations that expose temporal defects.
+- [VR-Thinker: Boosting Video Reward Models through Thinking-with-Image Reasoning](https://arxiv.org/abs/2510.10518) *(2025)* — Equips a video reward model with frame-selection operations and a bounded visual memory window so it acquires evidence mid-reasoning, activated by cold start, rejection-sampling fine-tuning, and GRPO.
+- [Unified Personalized Reward Model for Vision Generation](https://arxiv.org/abs/2602.02380) *(2026)* — UnifiedReward-Flex instantiates a per-prompt hierarchical rubric from self-generated criteria rather than fixed dimensions, supplying a context-adaptive reward for GRPO over image and video generators.
 
 ## Inference-Time and Test-Time Alignment
 
