@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-209-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-217-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="GitHub Last Commit"></a>
@@ -113,6 +113,7 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [Seedance 1.5 pro: A Native Audio-Visual Joint Generation Foundation Model](https://arxiv.org/abs/2512.13507) *(2025)* — Extends Seedance's reward-feedback alignment to joint audio-video generation with three RLHF reward models (audio-video alignment, motion, aesthetics) maximized across T2V/T2VA/I2VA.
 - [Seaweed-7B: Cost-Effective Training of Video Generation Foundation Model](https://arxiv.org/abs/2504.08685) *(2025)* — Adds Video-DPO on annotator best/worst picks from four generations per prompt, plus a quality/artifact classifier for data filtering.
 - [Kling-Omni Technical Report](https://arxiv.org/abs/2512.16776) *(2025)* — Applies multi-round DPO on human preference pairs over sampled video variants, targeting motion dynamics and visual integrity without trajectory sampling.
+- [CogOmniControl: Reasoning-Driven Controllable Video Generation via Creative Intent Cognition](https://arxiv.org/abs/2605.19995) *(2026)* — GRPO-aligns a controllable video DiT to the reasoning output of a reward-trained director VLM, which also assembles per-input evaluators for closed-loop Best-of-N selection.
 
 ### Process, Trajectory, Stability, and Efficiency
 
@@ -180,6 +181,7 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation](https://arxiv.org/abs/2502.02088) *(2025)* — Alternates preference-data improvement and generator optimization to iteratively strengthen alignment.
 - [RealDPO: Real or Not Real, that is the Preference](https://arxiv.org/abs/2510.14955) *(2025)* — Reward-model-free video DPO using real-action clips as chosen and model generations as rejected, with a tailored loss and the RealAction-5K dataset.
 - [Hallo4: High-Fidelity Dynamic Portrait Animation via Direct Preference Optimization](https://arxiv.org/abs/2505.23525) *(2025)* — Direct preference optimization on curated human preferences to align lip-sync and expression naturalness in portrait animation.
+- [Reg-DPO: SFT-Regularized Direct Preference Optimization with GT-Pair for Improving Video Generation](https://arxiv.org/abs/2511.01450) *(2025)* — Adds a dynamically weighted SFT reconstruction term to the video DPO loss to curb distribution shift at 14B scale, with GT-Pair construction treating real videos as chosen and model generations as rejected.
 
 ### Fine-Grained, Structured, and Geometry-Aware Preferences
 
@@ -261,6 +263,7 @@ Only rewards explicitly designed or demonstrated to train, steer, or verify a vi
 - [GT-SVJ: Generative-Transformer-Based Self-Supervised Video Judge for Efficient Video Reward Modeling](https://arxiv.org/abs/2602.05202) *(2026)* — Reformulates a video generative transformer as an energy-based reward model trained with contrastive latent perturbations that expose temporal defects.
 - [VR-Thinker: Boosting Video Reward Models through Thinking-with-Image Reasoning](https://arxiv.org/abs/2510.10518) *(2025)* — Equips a video reward model with frame-selection operations and a bounded visual memory window so it acquires evidence mid-reasoning, activated by cold start, rejection-sampling fine-tuning, and GRPO.
 - [Unified Personalized Reward Model for Vision Generation](https://arxiv.org/abs/2602.02380) *(2026)* — UnifiedReward-Flex instantiates a per-prompt hierarchical rubric from self-generated criteria rather than fixed dimensions, supplying a context-adaptive reward for GRPO over image and video generators.
+- [VQ-Insight: Teaching VLMs for AI-Generated Video Quality Understanding via Progressive Visual Reinforcement Learning](https://arxiv.org/abs/2506.18564) *(2025)* — GRPO-trains a reasoning quality judge through image warm-up and temporal-shuffle rewards, then alternates its pairwise votes with diffusion-DPO so judge and generator co-improve.
 
 ## Inference-Time and Test-Time Alignment
 
@@ -287,6 +290,9 @@ These methods optimize selection or guidance at sampling time rather than—or i
 - [Improving Motion in Image-to-Video Models via Adaptive Low-Pass Guidance](https://arxiv.org/abs/2506.08456) *(2025)* — ALG adapts frequency-filtered guidance over time to increase motion without destabilizing appearance.
 - [Causally Steered Diffusion for Automated Video Counterfactual Generation](https://arxiv.org/abs/2506.14404) *(2025)* — CSVC steers diffusion toward counterfactual outcomes using causal verification at inference.
 - [Think Before You Diffuse: Infusing Physical Rules into Video Diffusion](https://arxiv.org/abs/2505.21653) *(2025)* — DiffPhy converts explicit physical rules into planning and guidance signals before denoising.
+- [Self-Correcting Text-to-Video Generation with Misalignment Detection and Localized Refinement](https://arxiv.org/abs/2411.15115) *(2024)* — VideoRepair detects fine-grained misalignments by MLLM question answering, then re-noises and regenerates only the faulty regions while the same verifier scores rank reseeded candidates.
+- [RAPO++: Cross-Stage Prompt Optimization for Text-to-Video Generation via Data Alignment and Test-Time Scaling](https://arxiv.org/abs/2510.20206) *(2025)* — Rewrites prompts at test time from VLM misalignment reports and multi-verifier scores held in a feedback memory, then distills the verifier-selected best prompts back into the rewriter.
+- [Inference-Time Scaling for Joint Audio-Video Generation](https://arxiv.org/abs/2606.03183) *(2026)* — Pairs a text-video preference reward with an audio-video synchronization verifier for test-time search, calibrating their scales online through adaptive reward weighting to curb single-verifier hacking.
 
 ## Datasets and Benchmarks
 
@@ -323,6 +329,8 @@ These methods optimize selection or guidance at sampling time rather than—or i
 | **EvalCrafter** | 2023 | Comprehensive automatic and human evaluation suite for text-to-video models. | [Paper](https://arxiv.org/abs/2310.11440) |
 | **FETV** | 2023 | Fine-grained benchmark for text-to-video generation quality and text alignment. | [Paper](https://arxiv.org/abs/2311.01813) |
 | **Video-Bench** | 2025 | Broad benchmark suite for diagnosing modern video generators and evaluators. | [Paper](https://arxiv.org/abs/2504.04907) |
+| **ETVABench** | 2025 | Fine-grained text-video alignment scoring from scene-graph atomic questions answered by a knowledge-augmented video LLM. | [Paper](https://arxiv.org/abs/2503.16867) · [Project](https://eftv-eval.github.io/etva-eval/) |
+| **EvalVerse** | 2026 | Expert-calibrated cinematic quality, aesthetics, and acting scoring via a preference-trained VLM judge. | [Paper](https://arxiv.org/abs/2605.23271) |
 
 A benchmark qualifies here when it directly measures alignment-relevant behavior or is commonly used as a reward, verifier, pair selector, or anti-reward-hacking check.
 
