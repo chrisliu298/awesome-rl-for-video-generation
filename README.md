@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-218-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-220-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="GitHub Last Commit"></a>
@@ -94,6 +94,8 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [Using Human Feedback to Fine-tune Diffusion Models without Any Reward Model](https://arxiv.org/abs/2311.13231) *(2023)* — D3PO learns directly from pairwise feedback over diffusion trajectories without a separately trained reward model.
 - [Aligning Text-to-Image Models using Human Feedback](https://arxiv.org/abs/2302.12192) *(2023)* — Early demonstration that reward fine-tuning on human feedback aligns text-to-image diffusion, a precursor to video reward alignment.
 - [Flow-GRPO: Training Flow Matching Models via Online RL](https://arxiv.org/abs/2505.05470) *(2025)* — Makes deterministic flow matching explorable through ODE-to-SDE conversion and brings online GRPO to flow-matching generators.
+- [MixGRPO: Unlocking Flow-based GRPO Efficiency with Mixed ODE-SDE](https://arxiv.org/abs/2507.21802) *(2025)* — Restricts SDE sampling and GRPO updates to a sliding window of denoising steps while solving the remainder with ODE, cutting the optimization overhead of flow-based GRPO.
+- [DiffusionNFT: Online Diffusion Reinforcement with Forward Process](https://arxiv.org/abs/2509.16117) *(2025)* — Optimizes diffusion models on the forward process by contrasting positive and negative generations, removing likelihood estimation, solver restrictions, and classifier-free guidance.
 
 ## Reinforcement Learning for Video Generation
 
@@ -377,4 +379,4 @@ Inclusion criterion: the work must define, train, apply, or directly enable a re
 
 ---
 
-*Repository last updated: 2026-08-04. Coverage: reinforcement learning, preference optimization, GRPO / flow-GRPO, differentiable-reward post-training, reward-guided inference, reward models and verifiers that drive RL, and enabling datasets and benchmarks for video generation. Years denote first public preprint release.*
+*Repository last updated: 2026-08-07. Coverage: reinforcement learning, preference optimization, GRPO / flow-GRPO, differentiable-reward post-training, reward-guided inference, reward models and verifiers that drive RL, and enabling datasets and benchmarks for video generation. Years denote first public preprint release.*
