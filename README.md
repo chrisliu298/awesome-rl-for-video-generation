@@ -116,6 +116,7 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [Seaweed-7B: Cost-Effective Training of Video Generation Foundation Model](https://arxiv.org/abs/2504.08685) *(2025)* — Adds Video-DPO on annotator best/worst picks from four generations per prompt, plus a quality/artifact classifier for data filtering.
 - [Kling-Omni Technical Report](https://arxiv.org/abs/2512.16776) *(2025)* — Applies multi-round DPO on human preference pairs over sampled video variants, targeting motion dynamics and visual integrity without trajectory sampling.
 - [CogOmniControl: Reasoning-Driven Controllable Video Generation via Creative Intent Cognition](https://arxiv.org/abs/2605.19995) *(2026)* — GRPO-aligns a controllable video DiT to the reasoning output of a reward-trained director VLM, which also assembles per-input evaluators for closed-loop Best-of-N selection.
+- [ContentV: Efficient Training of Video Generation Models with Limited Compute](https://arxiv.org/abs/2506.05343) *(2025)* — Backpropagates a learned preference reward through sampled flow-matching steps for compute-efficient video RLHF.
 
 ### Process, Trajectory, Stability, and Efficiency
 
@@ -139,6 +140,7 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [TempAct: Advancing Temporal Plausibility in Autoregressive Video Generation via Planner-Executor RL](https://arxiv.org/abs/2606.28016) *(2026)* — Jointly optimizes an LLM planner and autoregressive video executor with hierarchical exploration and plan-, video-, and transition-level rewards.
 - [ReFree: Towards Realistic Co-Speech Video Generation via Reward-Free RL and Multilevel Speech Guidance](https://arxiv.org/abs/2606.13304) *(2026)* — Introduces reward-free reinforcement learning into flow-matching portrait-video training to suppress implausible head motion without human preferences or a learned reward.
 - [Flow-DPPO: Divergence Proximal Policy Optimization for Flow Matching Models](https://arxiv.org/abs/2606.11025) *(2026)* — Replaces PPO-style ratio clipping with an exact Gaussian-KL divergence constraint for stable online RL of flow-based image and video generators.
+- [Seeing What Matters: Visual Preference Policy Optimization for Visual Generation](https://arxiv.org/abs/2511.18719) *(2025)* — ViPO redistributes group-relative scalar feedback into spatially and temporally structured advantages for finer video credit assignment.
 
 ### Verifiable Rewards and Structured Constraints
 
@@ -168,6 +170,7 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [Improving the Physics of Video Generation with VJEPA-2 Reward Signal](https://arxiv.org/abs/2510.21840) *(2025)* — Uses a VJEPA-2 world-model reward signal to reward-align the physical plausibility of generated video.
 - [PAVXploreRL: Physical-Action-Visual World Model Reinforcement Learning with Action Exploration](https://arxiv.org/abs/2607.16602) *(2026)* — Post-trains an action-conditioned latent video world model with physical-plausibility, action-adherence, and visual-fidelity rewards plus noise-driven out-of-distribution action exploration.
 - [WorldCompass: Reinforcement Learning for Long-Horizon World Models](https://arxiv.org/abs/2602.09022) *(2026)* — Aligns interactive autoregressive video world models via clip-level rollouts, interaction-following and visual-quality rewards, and negative-aware fine-tuning.
+- [WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models](https://arxiv.org/abs/2608.04964) *(2026)* — Builds spatial-closure and temporal-consistency rewards from reversible action cycles to post-train long-horizon interactive video world models.
 
 ## Preference Optimization (DPO-family)
 
@@ -218,6 +221,7 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [V.I.P.: Iterative Online Preference Distillation for Efficient Video Diffusion Models](https://arxiv.org/abs/2508.03254) *(2025)* — Alternates online preference collection with distillation to align and accelerate video diffusion.
 - [Aligning Anime Video Generation with Human Feedback](https://arxiv.org/abs/2504.10044) *(2025)* — Introduces AnimeReward and gap-aware preference optimization for style-specific appearance and temporal consistency.
 - [ViPO: Visual Preference Optimization at Scale](https://arxiv.org/abs/2604.24953) *(2026)* — Releases 300K high-resolution preference-labeled video pairs and proposes Poly-DPO for robust optimization on noisy visual preferences.
+- [AniMatrix: An Anime Video Generation Model that Thinks in Art, Not Physics](https://arxiv.org/abs/2605.03652) *(2026)* — Uses deformation-aware video DPO with a domain reward model to favor intentional anime motion and stylization over generic physical realism.
 
 ## Reward Backpropagation and Differentiable-Reward Alignment
 
@@ -242,6 +246,9 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [SHIFT: Motion Alignment in Video Diffusion Models with Adversarial Hybrid Fine-Tuning](https://arxiv.org/abs/2603.17426) *(2026)* — Combines supervised and advantage-weighted updates with pixel-motion rewards and adversarial anti-hacking control.
 - [LiFT: Leveraging Human Feedback for Text-to-Video Model Alignment](https://arxiv.org/abs/2412.04814) *(2024)* — Learns from human feedback with a lightweight reward-driven alignment stage for text-to-video generation.
 - [On-Policy Adversarial Flow Distillation for Autoregressive Video Generation](https://arxiv.org/abs/2605.26105) *(2026)* — Trains a Bradley–Terry discriminator on paired teacher/student videos and converts its on-policy advantage into dense forward-process flow-matching updates.
+- [Control-A-Video: Controllable Text-to-Video Diffusion Models with Motion Prior and Reward Feedback Learning](https://arxiv.org/abs/2305.13840) *(2023)* — ST-ReFL differentiates aesthetic, technical-quality, residual-motion, and optical-flow rewards through video denoising.
+- [Reward-Aware Trajectory Shaping for Few-step Visual Generation](https://arxiv.org/abs/2604.14910) *(2026)* — RATS combines differentiable terminal rewards with reward-gated multi-horizon teacher shaping for few-step video generators.
+- [Sample-Adaptive Latent Rewards for Uncertainty-Guided Diffusion Post-Training](https://arxiv.org/abs/2608.06125) *(2026)* — SURE learns latent reward uncertainty and weights transition-local reward backpropagation to stabilize video post-training.
 
 ## Reward Models and Verifiers for RL
 
@@ -296,6 +303,7 @@ These methods optimize selection or guidance at sampling time rather than—or i
 - [Self-Correcting Text-to-Video Generation with Misalignment Detection and Localized Refinement](https://arxiv.org/abs/2411.15115) *(2024)* — VideoRepair detects fine-grained misalignments by MLLM question answering, then re-noises and regenerates only the faulty regions while the same verifier scores rank reseeded candidates.
 - [RAPO++: Cross-Stage Prompt Optimization for Text-to-Video Generation via Data Alignment and Test-Time Scaling](https://arxiv.org/abs/2510.20206) *(2025)* — Rewrites prompts at test time from VLM misalignment reports and multi-verifier scores held in a feedback memory, then distills the verifier-selected best prompts back into the rewriter.
 - [Inference-Time Scaling for Joint Audio-Video Generation](https://arxiv.org/abs/2606.03183) *(2026)* — Pairs a text-video preference reward with an audio-video synchronization verifier for test-time search, calibrating their scales online through adaptive reward weighting to curb single-verifier hacking.
+- [CachedSearch: Training-Free Cached Exploration for Test-Time Search in Video Diffusion](https://arxiv.org/abs/2607.23159) *(2026)* — Ranks aggressively cached candidate rollouts with a verifier, then regenerates only the winning seed at full compute.
 
 ## Datasets and Benchmarks
 
@@ -379,4 +387,4 @@ Inclusion criterion: the work must define, train, apply, or directly enable a re
 
 ---
 
-*Repository last updated: 2026-08-07. Coverage: reinforcement learning, preference optimization, GRPO / flow-GRPO, differentiable-reward post-training, reward-guided inference, reward models and verifiers that drive RL, and enabling datasets and benchmarks for video generation. Years denote first public preprint release.*
+*Repository last updated: 2026-08-09. Coverage: reinforcement learning, preference optimization, GRPO / flow-GRPO, differentiable-reward post-training, reward-guided inference, reward models and verifiers that drive RL, and enabling datasets and benchmarks for video generation. Years denote first public preprint release.*
