@@ -96,6 +96,8 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [Flow-GRPO: Training Flow Matching Models via Online RL](https://arxiv.org/abs/2505.05470) *(2025)* — Makes deterministic flow matching explorable through ODE-to-SDE conversion and brings online GRPO to flow-matching generators.
 - [MixGRPO: Unlocking Flow-based GRPO Efficiency with Mixed ODE-SDE](https://arxiv.org/abs/2507.21802) *(2025)* — Restricts SDE sampling and GRPO updates to a sliding window of denoising steps while solving the remainder with ODE, cutting the optimization overhead of flow-based GRPO.
 - [DiffusionNFT: Online Diffusion Reinforcement with Forward Process](https://arxiv.org/abs/2509.16117) *(2025)* — Optimizes diffusion models on the forward process by contrasting positive and negative generations, removing likelihood estimation, solver restrictions, and classifier-free guidance.
+- [TreeGRPO: Tree-Advantage GRPO for Online RL Post-Training of Diffusion Models](https://arxiv.org/abs/2512.08153) *(2025)* — Branches denoising trajectories from shared prefixes and backs leaf rewards into per-edge advantages for cheaper, finer-grained GRPO.
+- [V-GRPO: Online Reinforcement Learning for Denoising Generative Models Is Easier than You Think](https://arxiv.org/abs/2604.23380) *(2026)* — Stabilizes ELBO-surrogate GRPO with variance reduction and gradient-step control, avoiding full sampling-trajectory MDP optimization.
 
 ## Reinforcement Learning for Video Generation
 
@@ -171,6 +173,8 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [PAVXploreRL: Physical-Action-Visual World Model Reinforcement Learning with Action Exploration](https://arxiv.org/abs/2607.16602) *(2026)* — Post-trains an action-conditioned latent video world model with physical-plausibility, action-adherence, and visual-fidelity rewards plus noise-driven out-of-distribution action exploration.
 - [WorldCompass: Reinforcement Learning for Long-Horizon World Models](https://arxiv.org/abs/2602.09022) *(2026)* — Aligns interactive autoregressive video world models via clip-level rollouts, interaction-following and visual-quality rewards, and negative-aware fine-tuning.
 - [WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models](https://arxiv.org/abs/2608.04964) *(2026)* — Builds spatial-closure and temporal-consistency rewards from reversible action cycles to post-train long-horizon interactive video world models.
+- [VAMPO: Policy Optimization for Improving Visual Dynamics in Video Action Models](https://arxiv.org/abs/2603.19370) *(2026)* — Post-trains a diffusion video predictor with GRPO against expert latent dynamics using a first-step stochastic hybrid sampler.
+- [Distilling Physical Priors into Streaming World Models](https://arxiv.org/abs/2608.07981) *(2026)* — Routes windowed physics rewards to overlapping causal denoising blocks for temporally localized RL of streaming video generators.
 
 ## Preference Optimization (DPO-family)
 
@@ -274,6 +278,8 @@ Only rewards explicitly designed or demonstrated to train, steer, or verify a vi
 - [VR-Thinker: Boosting Video Reward Models through Thinking-with-Image Reasoning](https://arxiv.org/abs/2510.10518) *(2025)* — Equips a video reward model with frame-selection operations and a bounded visual memory window so it acquires evidence mid-reasoning, activated by cold start, rejection-sampling fine-tuning, and GRPO.
 - [Unified Personalized Reward Model for Vision Generation](https://arxiv.org/abs/2602.02380) *(2026)* — UnifiedReward-Flex instantiates a per-prompt hierarchical rubric from self-generated criteria rather than fixed dimensions, supplying a context-adaptive reward for GRPO over image and video generators.
 - [VQ-Insight: Teaching VLMs for AI-Generated Video Quality Understanding via Progressive Visual Reinforcement Learning](https://arxiv.org/abs/2506.18564) *(2025)* — GRPO-trains a reasoning quality judge through image warm-up and temporal-shuffle rewards, then alternates its pairwise votes with diffusion-DPO so judge and generator co-improve.
+- [Unified Reward Model for Multimodal Understanding and Generation](https://arxiv.org/abs/2503.05236) *(2025)* — Jointly learns pairwise and pointwise rewards across image and video tasks, then selects preference pairs for video-generation DPO.
+- [Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model](https://arxiv.org/abs/2601.04033) *(2026)* — GRPO-trains REACT on frame-level structural-distortion preferences for localized generative-video reward feedback.
 
 ## Inference-Time and Test-Time Alignment
 
@@ -304,6 +310,7 @@ These methods optimize selection or guidance at sampling time rather than—or i
 - [RAPO++: Cross-Stage Prompt Optimization for Text-to-Video Generation via Data Alignment and Test-Time Scaling](https://arxiv.org/abs/2510.20206) *(2025)* — Rewrites prompts at test time from VLM misalignment reports and multi-verifier scores held in a feedback memory, then distills the verifier-selected best prompts back into the rewriter.
 - [Inference-Time Scaling for Joint Audio-Video Generation](https://arxiv.org/abs/2606.03183) *(2026)* — Pairs a text-video preference reward with an audio-video synchronization verifier for test-time search, calibrating their scales online through adaptive reward weighting to curb single-verifier hacking.
 - [CachedSearch: Training-Free Cached Exploration for Test-Time Search in Video Diffusion](https://arxiv.org/abs/2607.23159) *(2026)* — Ranks aggressively cached candidate rollouts with a verifier, then regenerates only the winning seed at full compute.
+- [Planning with Sketch-Guided Verification for Physics-Aware Video Generation](https://arxiv.org/abs/2511.17450) *(2025)* — Ranks lightweight motion-plan sketches with semantic and physics verifiers, then iteratively refines the winner before video synthesis.
 
 ## Datasets and Benchmarks
 
@@ -342,6 +349,7 @@ These methods optimize selection or guidance at sampling time rather than—or i
 | **Video-Bench** | 2025 | Broad benchmark suite for diagnosing modern video generators and evaluators. | [Paper](https://arxiv.org/abs/2504.04907) |
 | **ETVABench** | 2025 | Fine-grained text-video alignment scoring from scene-graph atomic questions answered by a knowledge-augmented video LLM. | [Paper](https://arxiv.org/abs/2503.16867) · [Project](https://eftv-eval.github.io/etva-eval/) |
 | **EvalVerse** | 2026 | Expert-calibrated cinematic quality, aesthetics, and acting scoring via a preference-trained VLM judge. | [Paper](https://arxiv.org/abs/2605.23271) |
+| **RAVEN-Eval** | 2026 | Task-specific rubrics and order-robust LMM pairwise preferences over challenging text- and image-to-video generation tasks. | [Paper](https://arxiv.org/abs/2608.09111) |
 
 A benchmark qualifies here when it directly measures alignment-relevant behavior or is commonly used as a reward, verifier, pair selector, or anti-reward-hacking check.
 
@@ -387,4 +395,4 @@ Inclusion criterion: the work must define, train, apply, or directly enable a re
 
 ---
 
-*Repository last updated: 2026-08-09. Coverage: reinforcement learning, preference optimization, GRPO / flow-GRPO, differentiable-reward post-training, reward-guided inference, reward models and verifiers that drive RL, and enabling datasets and benchmarks for video generation. Years denote first public preprint release.*
+*Repository last updated: 2026-08-12. Coverage: reinforcement learning, preference optimization, GRPO / flow-GRPO, differentiable-reward post-training, reward-guided inference, reward models and verifiers that drive RL, and enabling datasets and benchmarks for video generation. Years denote first public preprint release.*
