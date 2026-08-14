@@ -95,7 +95,9 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [Aligning Text-to-Image Models using Human Feedback](https://arxiv.org/abs/2302.12192) *(2023)* — Early demonstration that reward fine-tuning on human feedback aligns text-to-image diffusion, a precursor to video reward alignment.
 - [Flow-GRPO: Training Flow Matching Models via Online RL](https://arxiv.org/abs/2505.05470) *(2025)* — Makes deterministic flow matching explorable through ODE-to-SDE conversion and brings online GRPO to flow-matching generators.
 - [MixGRPO: Unlocking Flow-based GRPO Efficiency with Mixed ODE-SDE](https://arxiv.org/abs/2507.21802) *(2025)* — Restricts SDE sampling and GRPO updates to a sliding window of denoising steps while solving the remainder with ODE, cutting the optimization overhead of flow-based GRPO.
+- [Coefficients-Preserving Sampling for Reinforcement Learning with Flow Matching](https://arxiv.org/abs/2509.05952) *(2025)* — Replaces SDE rollout noise in flow-based GRPO with coefficient-preserving stochastic sampling to prevent artifact-corrupted rewards and stabilize policy updates.
 - [DiffusionNFT: Online Diffusion Reinforcement with Forward Process](https://arxiv.org/abs/2509.16117) *(2025)* — Optimizes diffusion models on the forward process by contrasting positive and negative generations, removing likelihood estimation, solver restrictions, and classifier-free guidance.
+- [Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](https://arxiv.org/abs/2511.16955) *(2025)* — Recasts flow-model GRPO as contrastive optimization among ODE trajectories, preserving deterministic high-order solvers while reducing policy-update cost.
 - [TreeGRPO: Tree-Advantage GRPO for Online RL Post-Training of Diffusion Models](https://arxiv.org/abs/2512.08153) *(2025)* — Branches denoising trajectories from shared prefixes and backs leaf rewards into per-edge advantages for cheaper, finer-grained GRPO.
 - [V-GRPO: Online Reinforcement Learning for Denoising Generative Models Is Easier than You Think](https://arxiv.org/abs/2604.23380) *(2026)* — Stabilizes ELBO-surrogate GRPO with variance reduction and gradient-step control, avoiding full sampling-trajectory MDP optimization.
 
@@ -103,6 +105,7 @@ Start from the failure you need to fix. Training-time methods change the generat
 
 ### End-to-End and System-Level Post-Training
 
+- [Video to Video Generative Adversarial Network for Few-shot Learning Based on Policy Gradient](https://arxiv.org/abs/2410.20657) *(2024)* — Treats a recurrent video generator as a stochastic policy and uses discriminator rewards with Monte Carlo credit for few-shot unpaired video translation.
 - [DanceGRPO: Unleashing GRPO on Visual Generation](https://arxiv.org/abs/2505.07818) *(2025)* — Adapts critic-free group-relative policy optimization to diffusion and rectified-flow image and video generators.
 - [Improving Dynamic Object Interactions in Text-to-Video Generation with AI Feedback](https://arxiv.org/abs/2412.02617) *(2024)* — Unifies offline RWR and DPO for video diffusion and finds binary VLM feedback especially effective on difficult object dynamics.
 - [Seedance 1.0: Exploring the Boundaries of Video Generation Models](https://arxiv.org/abs/2506.09113) *(2025)* — Combines fine-grained SFT with video-specific RLHF and multidimensional rewards in a production-scale foundation model.
@@ -311,6 +314,8 @@ These methods optimize selection or guidance at sampling time rather than—or i
 - [Inference-Time Scaling for Joint Audio-Video Generation](https://arxiv.org/abs/2606.03183) *(2026)* — Pairs a text-video preference reward with an audio-video synchronization verifier for test-time search, calibrating their scales online through adaptive reward weighting to curb single-verifier hacking.
 - [CachedSearch: Training-Free Cached Exploration for Test-Time Search in Video Diffusion](https://arxiv.org/abs/2607.23159) *(2026)* — Ranks aggressively cached candidate rollouts with a verifier, then regenerates only the winning seed at full compute.
 - [Planning with Sketch-Guided Verification for Physics-Aware Video Generation](https://arxiv.org/abs/2511.17450) *(2025)* — Ranks lightweight motion-plan sketches with semantic and physics verifiers, then iteratively refines the winner before video synthesis.
+- [Retrieval, Refinement, and Ranking for Text-to-Video Generation via Prompt Optimization and Test-Time Scaling](https://arxiv.org/abs/2603.01509) *(2026)* — Combines RAG prompt expansion, preference-model reranking, and temporal interpolation for black-box test-time text-to-video alignment.
+- [Beyond Trial-and-Error: Agentic Optimization for Image-to-Video Adherence](https://arxiv.org/abs/2608.12290) *(2026)* — Alternates MLLM critique-based prompt refinement with reward-guided Bayesian search over seeds and guidance scales for black-box image-to-video generation.
 
 ## Datasets and Benchmarks
 
@@ -350,6 +355,7 @@ These methods optimize selection or guidance at sampling time rather than—or i
 | **ETVABench** | 2025 | Fine-grained text-video alignment scoring from scene-graph atomic questions answered by a knowledge-augmented video LLM. | [Paper](https://arxiv.org/abs/2503.16867) · [Project](https://eftv-eval.github.io/etva-eval/) |
 | **EvalVerse** | 2026 | Expert-calibrated cinematic quality, aesthetics, and acting scoring via a preference-trained VLM judge. | [Paper](https://arxiv.org/abs/2605.23271) |
 | **RAVEN-Eval** | 2026 | Task-specific rubrics and order-robust LMM pairwise preferences over challenging text- and image-to-video generation tasks. | [Paper](https://arxiv.org/abs/2608.09111) |
+| **Teaching Monster Challenge** | 2026 | Learner-conditioned instructional-video rubrics, LLM judging, pairwise crowd preferences, and expert adjudication. | [Paper](https://arxiv.org/abs/2608.08852) |
 
 A benchmark qualifies here when it directly measures alignment-relevant behavior or is commonly used as a reward, verifier, pair selector, or anti-reward-hacking check.
 
@@ -395,4 +401,4 @@ Inclusion criterion: the work must define, train, apply, or directly enable a re
 
 ---
 
-*Repository last updated: 2026-08-12. Coverage: reinforcement learning, preference optimization, GRPO / flow-GRPO, differentiable-reward post-training, reward-guided inference, reward models and verifiers that drive RL, and enabling datasets and benchmarks for video generation. Years denote first public preprint release.*
+*Repository last updated: 2026-08-14. Coverage: reinforcement learning, preference optimization, GRPO / flow-GRPO, differentiable-reward post-training, reward-guided inference, reward models and verifiers that drive RL, and enabling datasets and benchmarks for video generation. Years denote first public preprint release.*
