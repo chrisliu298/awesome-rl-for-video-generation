@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-220-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-249-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rl-for-video-generation/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rl-for-video-generation?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="GitHub Last Commit"></a>
@@ -100,6 +100,10 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](https://arxiv.org/abs/2511.16955) *(2025)* — Recasts flow-model GRPO as contrastive optimization among ODE trajectories, preserving deterministic high-order solvers while reducing policy-update cost.
 - [TreeGRPO: Tree-Advantage GRPO for Online RL Post-Training of Diffusion Models](https://arxiv.org/abs/2512.08153) *(2025)* — Branches denoising trajectories from shared prefixes and backs leaf rewards into per-edge advantages for cheaper, finer-grained GRPO.
 - [V-GRPO: Online Reinforcement Learning for Denoising Generative Models Is Easier than You Think](https://arxiv.org/abs/2604.23380) *(2026)* — Stabilizes ELBO-surrogate GRPO with variance reduction and gradient-step control, avoiding full sampling-trajectory MDP optimization.
+- [Designing Reinforcement Learning for Diffusion Models: A Unified Path-Space View](https://arxiv.org/abs/2608.14430) *(2026)* — Derives reverse-trajectory and forward-matching diffusion RL from one path-space importance-sampling estimator, recasting their gap as variance reduction and proposing a multi-sample KDE value-gradient recipe.
+- [Scaling Reinforcement Learning for Diffusion Models via Velocity Matching](https://arxiv.org/abs/2608.23664) *(2026)* — RVM drops trajectory likelihoods entirely and reinforces high-reward directions on the velocity field itself, subsuming DiffusionNFT-style updates and adding a dynamic-tracking reward that counters static-video reward hacking.
+- [On-Policy Self-Distillation in Diffusion Models](https://arxiv.org/abs/2608.24646) *(2026)* — DiffusionOPSD turns endpoint reward gradients into bounded positive and negative targets on clean-output predictions, supplying intermediate denoising supervision that endpoint rewards leave unspecified.
+- [Manifold Drift in Flow Preference Optimization: A Root Cause of Reward Hacking](https://arxiv.org/abs/2608.20011) *(2026)* — Formalizes preference updates pushing terminal samples off the pretrained manifold and proposes ThermoDPO, a temperature-controlled objective anchored on preferred samples that interpolates rejection-sampling fine-tuning and FlowDPO.
 
 ## Reinforcement Learning for Video Generation
 
@@ -122,6 +126,7 @@ Start from the failure you need to fix. Training-time methods change the generat
 - [Kling-Omni Technical Report](https://arxiv.org/abs/2512.16776) *(2025)* — Applies multi-round DPO on human preference pairs over sampled video variants, targeting motion dynamics and visual integrity without trajectory sampling.
 - [CogOmniControl: Reasoning-Driven Controllable Video Generation via Creative Intent Cognition](https://arxiv.org/abs/2605.19995) *(2026)* — GRPO-aligns a controllable video DiT to the reasoning output of a reward-trained director VLM, which also assembles per-input evaluators for closed-loop Best-of-N selection.
 - [ContentV: Efficient Training of Video Generation Models with Limited Compute](https://arxiv.org/abs/2506.05343) *(2025)* — Backpropagates a learned preference reward through sampled flow-matching steps for compute-efficient video RLHF.
+- [Aligning Human Sense: Calibrated Distributional Reward Learning for Video Generation](https://arxiv.org/abs/2608.21425) *(2026)* — Models video quality as a multidimensional reward distribution fitted with a Wasserstein objective over elite-filtered preferences, then substitutes that distributional alignment for KL in GRPO.
 
 ### Process, Trajectory, Stability, and Efficiency
 
@@ -283,6 +288,8 @@ Only rewards explicitly designed or demonstrated to train, steer, or verify a vi
 - [VQ-Insight: Teaching VLMs for AI-Generated Video Quality Understanding via Progressive Visual Reinforcement Learning](https://arxiv.org/abs/2506.18564) *(2025)* — GRPO-trains a reasoning quality judge through image warm-up and temporal-shuffle rewards, then alternates its pairwise votes with diffusion-DPO so judge and generator co-improve.
 - [Unified Reward Model for Multimodal Understanding and Generation](https://arxiv.org/abs/2503.05236) *(2025)* — Jointly learns pairwise and pointwise rewards across image and video tasks, then selects preference pairs for video-generation DPO.
 - [Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model](https://arxiv.org/abs/2601.04033) *(2026)* — GRPO-trains REACT on frame-level structural-distortion preferences for localized generative-video reward feedback.
+- [VA-Judger: Reward Modeling from Human Preference Feedback for Joint Video-Audio Generation](https://arxiv.org/abs/2608.18607) *(2026)* — Replaces per-dimension metric mixtures with a chain-of-thought omni-reward model trained on the VAPref-10K preference set and dimension-wise RL, targeting the incoherence that metric-combination rewards let through.
+- [FIRM-Video: Check Before You Score for Reliable Text-to-Video Reward Modeling](https://arxiv.org/abs/2608.21839) *(2026)* — Builds reward supervision by verifying dimension-specific checklists against temporal evidence before aggregating only confirmed decisions, rather than scoring holistically from a fixed rubric.
 
 ## Inference-Time and Test-Time Alignment
 
@@ -401,4 +408,4 @@ Inclusion criterion: the work must define, train, apply, or directly enable a re
 
 ---
 
-*Repository last updated: 2026-08-14. Coverage: reinforcement learning, preference optimization, GRPO / flow-GRPO, differentiable-reward post-training, reward-guided inference, reward models and verifiers that drive RL, and enabling datasets and benchmarks for video generation. Years denote first public preprint release.*
+*Repository last updated: 2026-08-30. Coverage: reinforcement learning, preference optimization, GRPO / flow-GRPO, differentiable-reward post-training, reward-guided inference, reward models and verifiers that drive RL, and enabling datasets and benchmarks for video generation. Years denote first public preprint release.*
